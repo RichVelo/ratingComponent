@@ -1,0 +1,104 @@
+
+:root {
+    --background-black: #212121;
+    --rate-box-background: #222a38;
+    --para-text: #5b719c;
+    --button-background:#ff8c00;
+    --button-background-hover: #fff;
+    --button-text-hover: #ff8c00;
+}
+
+* {
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+}
+
+body {
+    background-color: var(--background-black);
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 2rem;
+    color: var(--para-text);
+}
+
+h1 {
+    font-size: 3rem
+}
+
+#rate {
+    background-color: var(--rate-box-background);
+    width: 40%;
+    height: 50%;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+#rating-and-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+#submit {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--button-background);
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px;
+}
+
+#submit:hover {
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
+
+    transition: 0.2s ease-in-out;
+}
+
+#nums {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+}
+
+.numberButton {
+    background-color: var(--para-text);
+    color: var(--button-background-hover);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+#thank-you {
+    background-color: var(--rate-box-background);
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+    display: none;
+}
