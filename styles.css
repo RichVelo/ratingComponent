@@ -1,8 +1,9 @@
 
 :root {
     --background-black: #212121;
-    --rate-box-background: #222a38;
-    --para-text: #5b719c;
+    --rate-box-background: #1d232e;
+    --para-text: #818fa7;
+    --numbers-background: #2e343f;
     --button-background:#ff8c00;
     --button-background-hover: #fff;
     --button-text-hover: #ff8c00;
@@ -27,19 +28,39 @@ main {
     align-items: center;
 }
 
-p {
-    font-size: 2rem;
+.para-text {
+    font-size: 1.5rem;
     color: var(--para-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 h1 {
     font-size: 3rem
 }
 
-#rate {
+h2 {
+    font-size: 2.5rem
+}
+
+#star {
+    position: relative;
+    background-color: var(--numbers-background);
+    padding: 5px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rate {
     background-color: var(--rate-box-background);
     width: 40%;
-    height: 50%;
+    height: 40%;
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -79,26 +100,59 @@ h1 {
 #nums {
     display: flex;
     flex-direction: row;
-    column-gap: 5px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .numberButton {
-    background-color: var(--para-text);
+    background-color: var(--numbers-background);
     color: var(--button-background-hover);
     font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
-#thank-you {
+.numberButton:hover {
+    background-color: var(--button-background-hover);
+    color: var(--numbers-background);
+    transform: scale(1.25);
+    transition: 0.5s ease-in-out;
+}
+
+.thank-you {
     background-color: var(--rate-box-background);
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
+    padding: 20px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.hidden {
     display: none;
+}
+
+.visible {
+    display: flex;
+}
+
+#thanks-icon {
+    margin: 20px;
+}
+
+#chosen-rating {
+    background-color: var(--numbers-background);
+    color: var(--para-text);
+    font-size: 1.5rem;
+    border-radius: 20px;
+    padding: 10px;
 }
