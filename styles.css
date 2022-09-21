@@ -1,48 +1,56 @@
 
 :root {
-    --background-black: #212121;
-    --rate-box-background: #1d232e;
-    --para-text: #818fa7;
-    --numbers-background: #2e343f;
-    --button-background:#ff8c00;
-    --button-background-hover: #fff;
-    --button-text-hover: #ff8c00;
+    --background-black: hsl(216, 12%, 8%);
+    --rate-box-background: hsl(213, 19%, 18%);
+    --para-text: hsl(217, 12%, 63%);
+    --numbers-background: hsl(215, 11%, 29%);
+    --button-background:hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --button-text-hover: hsl(25, 97%, 53%);
+    --chosen-rating-text: hsl(25, 97%, 53%);
 }
 
 * {
-    color: #ffffff;
+    color: var(--white);
     font-family: 'Open Sans', sans-serif;
-    font-size: 10px;
+    font-size: 15px;
+}
+
+html{
+    margin: 0;
 }
 
 body {
     background-color: var(--background-black);
-}
-
-main {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1440px;
+    height: 100vh;
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    max-width: 375px;
 }
 
 .para-text {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--para-text);
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-wrap: wrap; */
 }
 
 h1 {
-    font-size: 3rem
+    font-size: 2rem
 }
 
 h2 {
-    font-size: 2.5rem
+    font-size: 1.75rem
 }
 
 #star {
@@ -50,8 +58,8 @@ h2 {
     background-color: var(--numbers-background);
     padding: 5px;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,8 +67,8 @@ h2 {
 
 .rate {
     background-color: var(--rate-box-background);
-    width: 40%;
-    height: 40%;
+    width: 90%;
+    height: 100%;
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -72,70 +80,81 @@ h2 {
 #rating-and-button {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
 }
 
-#submit {
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--button-background);
+form {
     width: 100%;
-    border-radius: 20px;
-    padding: 10px;
-    margin: 20px;
-}
-
-#submit:hover {
-    background-color: var(--button-background-hover);
-    color: var(--button-text-hover);
-
-    transition: 0.2s ease-in-out;
-}
-
-#nums {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    margin: 15px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.numberButton {
+input {
+    display: none;
+}
+
+input:checked + label {
+    transition: all 0.3s;
+    background-color: var(--button-background);
+    color: var(--white);
+}
+
+label {
     background-color: var(--numbers-background);
-    color: var(--button-background-hover);
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+    font-size: 1rem;
+    color: var(--para-text);
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.numberButton:hover {
-    background-color: var(--button-background-hover);
-    color: var(--numbers-background);
-    transform: scale(1.25);
-    transition: 0.3s ease-in-out;
+label:hover {
+    color: var(--button-text-hover);
+    background-color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button {
+    border: none;
+    border-radius: 15px;
+    background-color: var(--button-background);
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    padding-top: 7px;
+    color: var(--white);
+    font-size: 1.25rem;
+}
+
+button:hover {
+    color: var(--button-text-hover);
+    background-color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 .thank-you {
     background-color: var(--rate-box-background);
-    width: 40%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
     padding: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    /* font-size: rem; */
 }
 
 .hidden {
@@ -152,8 +171,18 @@ h2 {
 
 #chosen-rating {
     background-color: var(--numbers-background);
-    color: var(--para-text);
-    font-size: 1.5rem;
+    color: var(--chosen-rating-text);
+    font-size: 1rem;
     border-radius: 20px;
     padding: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    width: 100%
+    
 }

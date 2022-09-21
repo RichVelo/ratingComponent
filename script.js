@@ -1,46 +1,21 @@
-// //using an array and foreach to produce numbers for the rating in function
-// const numbers = [1, 2, 3, 4, 5]
+const rate = document.querySelector("#rate")
+const thankYou = document.querySelector("#thank-you")
+const form = document.querySelector("#rating-select")
 
-// let rateNums = document.querySelector('#nums')
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
 
-// numbers.forEach((number) => {
-//     rateNums.innerHTML += makeNumbersDisplay(number)
-// })
+    const rating = "input[name=ratings]:checked"
+    const selectedNum = document.querySelector(rating)
 
-// function makeNumbersDisplay(number) {
-//     return '<div class="numberButton">' + number + '</div>'
-// }
-
-//on click update variable with textcontent of the div
-let rating = null
-let one = document.querySelector("#one")
-one.addEventListener('click', () => {rating = 1;})
-let two = document.querySelector("#two")
-two.addEventListener('click', () => {rating = 2;})
-let three = document.querySelector("#three")
-three.addEventListener('click', () => {rating = 3;})
-let four = document.querySelector("#four")
-four.addEventListener('click', () => {rating = 4;})
-let five = document.querySelector("#five")
-five.addEventListener('click', () => {rating = 5;})
-
-
-
-//on click of submit button hide rating screen and show thank you screen
-let submitButton = document.querySelector('#submit')
-let rateHide = document.querySelector('#rate')
-let thanksDisplay = document.querySelector('#thank-you')
-let chosenRating = document.querySelector('#chosen-rating')
-
-submitButton.addEventListener('click', () => {
-    rateHide.classList.remove('rate')
-	rateHide.classList.add('hidden')
-    thanksDisplay.classList.remove('hidden')
-    thanksDisplay.classList.add('thank-you')
-    chosenRating.textContent += showratingSelected(rating)
-    console.log(rating)
+    if(selectedNum !== null){
+        const selectedRating = document.querySelector("#chosen-rating")
+        selectedRating.textContent = "You selected " + selectedNum.getAttribute("value") + " out of 5!"
+        rate.classList.remove("rate")
+        rate.classList.add("hidden")
+        thankYou.classList.remove("hidden")
+        thankYou.classList.add("thank-you")
+    } else {
+        alert("Please select a rating, kisses")
+    }
 })
-
- function showratingSelected(rating) {
-     return 'You selected ' + rating + ' out of 5'
-}
